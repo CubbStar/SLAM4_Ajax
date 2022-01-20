@@ -1,8 +1,8 @@
-<h1>Voilà ma page</h1>
-<ul>
-    <?php
+<?php
+    header('Content-Type: application/json');
+    $data = [];
     for ($i = 1; $i <= 10; $i++) {
-        echo "<li>Valeur $i</li>";
+        $data[] = "Valeur $i";
     }
-    ?>
-</ul>
+    echo json_encode($data);
+?>

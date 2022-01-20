@@ -58,3 +58,7 @@
         transform: translate(24px, 0);
     }
 }
+
+.border {
+    border:1px solid black;
+}

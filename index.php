@@ -14,15 +14,19 @@
             <div class="lds-ellipsis"><div>
                 </div><div></div><div></div><div></div>
             </div>
-            <button class="center" onclick="affichage()" >Boutons</button>
         </div>
+            <script>
+                fetch("./monContenuAsynchrone.php")
+                    .then((response) => response.json())
+                    .then((datas) => {
+                        document.getElementById("contenuAsynchrone").innerHTML = "";
 
-        <script>
-            function affichage() {
-                $.get("./monContenuAsynchrone.php", (data) => {
-                    $("#contenuAsynchrone").html(data);
-                });
-            }
-        </script>
+                        datas.forEach((el) => {
+                            document
+                                .getElementById("contenuAsynchrone")
+                                .insertAdjacentHTML("beforeend", "<div class='border'>" + el + "</div>");
+                        });
+                    });
+            </script>
     </body>
 </html>
